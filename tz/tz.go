@@ -28,8 +28,11 @@ import (
 	"runtime/debug"
 )
 
-func init() {
-	load()
+// Load loads on demand
+func Load() {
+	if centerCache == nil {
+		load()
+	}
 }
 
 func load() {
